@@ -1,0 +1,6 @@
+<% form_for [:admin, @category] do |f| %>
+  <%= error_messages @category %>
+  <%= f.label :name, "Nom : " %><br />
+  <%= f.text_field :name %>
+  <%= f.submit @category.new_record? ? "Ajouter" : "Enregistrer" %>
+<% end %>

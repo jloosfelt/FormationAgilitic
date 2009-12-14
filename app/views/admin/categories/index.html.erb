@@ -2,9 +2,10 @@
 <% if @categories.any? %>  
   <ul>
     <% @categories.each do |category| %>
-       <li><%= link_to category.name, admin_category_path(category) %></li>
+       <li><%= link_to category.name, admin_category_path(category) %> (<%= link_to "Editer", edit_admin_category_path(category) %>)</li>
     <% end %>
   </ul>      
 <% else %>
   <p>Il n'y a aucune catégorie</p>
 <% end %>
+<%= link_to "Ajouter une catégorie", new_admin_category_path %>

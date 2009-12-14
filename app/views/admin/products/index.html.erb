@@ -1,0 +1,11 @@
+<h2>Liste des produits</h2>
+<% if @products.any? %>  
+  <ul>
+    <% @products.each do |product| %>
+       <li><%= link_to product.name, admin_product_path(product) %> (<%= link_to "Editer", edit_admin_product_path(product) %>)</li>
+    <% end %>
+  </ul>      
+<% else %>
+  <p>Il n'y a aucun produit</p>
+<% end %>
+<%= link_to "Ajouter un produit", new_admin_product_path %>

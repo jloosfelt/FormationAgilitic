@@ -5,7 +5,6 @@ class CategoriesController < BaseController
 
   def show                    
     @category = Category.find(params[:id])
-    
   end
 
 end

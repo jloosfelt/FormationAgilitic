@@ -1,8 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
-    admin.resources :categories do |category|
-      category.resources :products
-    end
+    admin.resources :categories
+    admin.resources :products
     admin.root :controller => 'categories'
   end                                  
   

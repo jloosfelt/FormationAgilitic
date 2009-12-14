@@ -1,0 +1,14 @@
+<% form_for [:admin, @product] do |f| %>
+  <%= error_messages @product %>
+  <%= f.label :name, "Nom : " %>
+  <%= f.text_field :name %><br />
+
+  <%= f.label :price, "Prix : " %>
+  <%= f.text_field :price %><br />
+  
+  <%= f.label :category_id, "Catégorie : " %>
+  <%= f.collection_select :category_id, Category.all, :id, :name %><br /><%# hack Category.all devrait être dans controller %>
+  
+  
+  <%= f.submit @product.new_record? ? "Ajouter" : "Enregistrer" %>
+<% end %>

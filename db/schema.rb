@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20091214093634) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
-    t.string   "price"
+    t.float    "price"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"

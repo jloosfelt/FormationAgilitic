@@ -832,3 +832,1357 @@ Rendering admin/categories/index
   [4;35;1mCategory Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
 Rendered admin/shared/_tabs (0.2ms)
 Completed in 10ms (View: 5, DB: 2) | 200 OK [http://formation.local/admin]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (37.2ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (20.6ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCategories (20091214093606)
+  [4;36;1mSQL (9.9ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093606')[0m
+Migrating to CreateProducts (20091214093613)
+  [4;36;1mSQL (8.7ms)[0m   [0;1mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `price` float, `category_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093613')[0m
+Migrating to CreateCustomers (20091214093619)
+  [4;36;1mSQL (18.7ms)[0m   [0;1mCREATE TABLE `customers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093619')[0m
+Migrating to CreateOrders (20091214093624)
+  [4;36;1mSQL (11.3ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093624')[0m
+Migrating to CreateUsers (20091214093628)
+  [4;36;1mSQL (11.6ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093628')[0m
+Migrating to CreateOrderItems (20091214093634)
+  [4;36;1mSQL (9.6ms)[0m   [0;1mCREATE TABLE `order_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093634')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `categories`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `categories`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `customers`[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mdescribe `customers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `customers`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `order_items`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `order_items`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `order_items`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `orders`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `orders`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Create (1.5ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('Cat 1', '2009-12-14 11:02:47', '2009-12-14 11:02:47')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mDROP DATABASE IF EXISTS `formation_development`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE DATABASE `formation_development` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (11.0ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (12.6ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCategories (20091214093606)
+  [4;36;1mSQL (11.3ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093606')[0m
+Migrating to CreateProducts (20091214093613)
+  [4;36;1mSQL (10.5ms)[0m   [0;1mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `price` float, `category_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093613')[0m
+Migrating to CreateCustomers (20091214093619)
+  [4;36;1mSQL (9.8ms)[0m   [0;1mCREATE TABLE `customers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093619')[0m
+Migrating to CreateOrders (20091214093624)
+  [4;36;1mSQL (11.3ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093624')[0m
+Migrating to CreateUsers (20091214093628)
+  [4;36;1mSQL (11.6ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093628')[0m
+Migrating to CreateOrderItems (20091214093634)
+  [4;36;1mSQL (14.2ms)[0m   [0;1mCREATE TABLE `order_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093634')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `categories`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `categories`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `customers`[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mdescribe `customers`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `customers`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `order_items`[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mdescribe `order_items`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW KEYS FROM `order_items`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `orders`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `orders`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mCategory Columns (13.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Create (0.2ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('Cat 1', '2009-12-14 11:06:06', '2009-12-14 11:06:06')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProduct Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Create (2.5ms)[0m   [0mINSERT INTO `products` (`name`, `price`, `created_at`, `updated_at`, `category_id`) VALUES('Product 1', 10.2, '2009-12-14 11:06:06', '2009-12-14 11:06:06', 1)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:06:36) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/application
+Rendering categories/index
+  [4;36;1mCategory Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Completed in 45ms (View: 30, DB: 2) | 200 OK [http://formation.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:06:37) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/application
+Rendering categories/index
+  [4;35;1mCategory Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://formation.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2009-12-14 12:06:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;35;1mProduct Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 1) [0m
+  [4;35;1mProduct Load (0.1ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.category_id = 1) [0m
+Completed in 26ms (View: 10, DB: 12) | 200 OK [http://formation.local/categories/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:25:22) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (124.3ms)
+Completed in 173ms (View: 159, DB: 2) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#new (for 127.0.0.1 at 2009-12-14 12:25:26) [GET]
+
+NoMethodError (undefined method `new' for nil:NilClass):
+  app/controllers/admin/categories_controller.rb:11:in `new'
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (40.1ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-14 12:25:31) [GET]
+
+ActionController::RoutingError (No route matches "/admin/category/new" with {:method=>:get}):
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:27:18) [GET]
+  [4;36;1mCategory Load (0.7ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 19ms (View: 8, DB: 2) | 200 OK [http://formation.local/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#new (for 127.0.0.1 at 2009-12-14 12:27:19) [GET]
+
+NoMethodError (undefined method `new' for nil:NilClass):
+  app/controllers/admin/categories_controller.rb:11:in `new'
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (38.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:28:04) [GET]
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#new (for 127.0.0.1 at 2009-12-14 12:28:05) [GET]
+  [4;35;1mCategory Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendering template within layouts/admin
+Rendering admin/categories/new
+Rendered admin/categories/_form (7.7ms)
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 19ms (View: 15, DB: 1) | 200 OK [http://formation.local/admin/categories/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2009-12-14 12:28:12) [POST]
+  Parameters: {"category"=>{"name"=>"Pouf"}, "commit"=>"Ajouter", "authenticity_token"=>"IjUCZ+BOstjmKaXHp6QQhWs18yE9We87BdOaI43Ctu8="}
+  [4;35;1mCategory Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Create (0.4ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('Pouf', '2009-12-14 11:28:12', '2009-12-14 11:28:12')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://formation.local/admin/categories
+Completed in 16ms (DB: 3) | 302 Found [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:28:12) [GET]
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 13ms (View: 5, DB: 2) | 200 OK [http://formation.local/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 12:28:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCategory Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.9ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 2) [0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 109ms (View: 100, DB: 3) | 200 OK [http://formation.local/admin/categories/2]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 12:28:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;36;1mProduct Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 1) [0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.category_id = 1) [0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 15ms (View: 8, DB: 4) | 200 OK [http://formation.local/admin/categories/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:29:13) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#edit (for 127.0.0.1 at 2009-12-14 12:29:20) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to edit. Actions: create, index, new, and show):
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#edit (for 127.0.0.1 at 2009-12-14 12:31:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+
+ActionView::MissingTemplate (Missing template admin/categories/edit.erb in view path app/views):
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#edit (for 127.0.0.1 at 2009-12-14 12:32:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.9ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/edit
+Rendered admin/categories/_form (2.9ms)
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 21ms (View: 12, DB: 4) | 200 OK [http://formation.local/admin/categories/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2009-12-14 12:32:22) [PUT]
+  Parameters: {"category"=>{"name"=>"Chats"}, "commit"=>"Ajouter", "authenticity_token"=>"IjUCZ+BOstjmKaXHp6QQhWs18yE9We87BdOaI43Ctu8=", "id"=>"1"}
+
+ActionController::UnknownAction (No action responded to update. Actions: create, edit, index, new, and show):
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2009-12-14 12:37:28) [PUT]
+  Parameters: {"category"=>{"name"=>"Chats"}, "commit"=>"Ajouter", "authenticity_token"=>"IjUCZ+BOstjmKaXHp6QQhWs18yE9We87BdOaI43Ctu8=", "id"=>"1"}
+  [4;35;1mCategory Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (6.6ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCategory Update (5.1ms)[0m   [0;1mUPDATE `categories` SET `updated_at` = '2009-12-14 11:37:28', `name` = 'Chats' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://formation.local/admin/categories
+Completed in 21ms (DB: 13) | 302 Found [http://formation.local/admin/categories/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:37:28) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2009-12-14 12:37:33) [PUT]
+  Parameters: {"category"=>{"name"=>"Chats"}, "commit"=>"Ajouter", "authenticity_token"=>"IjUCZ+BOstjmKaXHp6QQhWs18yE9We87BdOaI43Ctu8=", "id"=>"1"}
+  [4;36;1mCategory Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://formation.local/admin/categories
+Completed in 25ms (DB: 2) | 302 Found [http://formation.local/admin/categories/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:37:33) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 12:37:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.8ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;36;1mProduct Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 1) [0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.category_id = 1) [0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 17ms (View: 7, DB: 3) | 200 OK [http://formation.local/admin/categories/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2009-12-14 12:37:46) [PUT]
+  Parameters: {"category"=>{"name"=>"Chats"}, "commit"=>"Ajouter", "authenticity_token"=>"IjUCZ+BOstjmKaXHp6QQhWs18yE9We87BdOaI43Ctu8=", "id"=>"1"}
+  [4;36;1mCategory Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://formation.local/admin/categories
+Completed in 24ms (DB: 3) | 302 Found [http://formation.local/admin/categories/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:37:46) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2009-12-14 12:37:50) [PUT]
+  Parameters: {"category"=>{"name"=>"Chats"}, "commit"=>"Ajouter", "authenticity_token"=>"IjUCZ+BOstjmKaXHp6QQhWs18yE9We87BdOaI43Ctu8=", "id"=>"1"}
+  [4;36;1mCategory Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://formation.local/admin/categories
+Completed in 7ms (DB: 1) | 302 Found [http://formation.local/admin/categories/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:37:50) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2009-12-14 12:37:52) [PUT]
+  Parameters: {"category"=>{"name"=>"Chats"}, "commit"=>"Ajouter", "authenticity_token"=>"IjUCZ+BOstjmKaXHp6QQhWs18yE9We87BdOaI43Ctu8=", "id"=>"1"}
+  [4;36;1mCategory Columns (14.4ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://formation.local/admin/categories
+Completed in 24ms (DB: 15) | 302 Found [http://formation.local/admin/categories/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:37:52) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2009-12-14 12:37:54) [PUT]
+  Parameters: {"category"=>{"name"=>"Chats"}, "commit"=>"Ajouter", "authenticity_token"=>"IjUCZ+BOstjmKaXHp6QQhWs18yE9We87BdOaI43Ctu8=", "id"=>"1"}
+  [4;36;1mCategory Columns (4.8ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.7ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://formation.local/admin/categories
+Completed in 21ms (DB: 6) | 302 Found [http://formation.local/admin/categories/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:37:54) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:37:56) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#new (for 127.0.0.1 at 2009-12-14 12:38:14) [GET]
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendering template within layouts/admin
+Rendering admin/categories/new
+Rendered admin/categories/_form (2.0ms)
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://formation.local/admin/categories/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2009-12-14 12:38:19) [POST]
+  Parameters: {"category"=>{"name"=>"Test"}, "commit"=>"Ajouter", "authenticity_token"=>"IjUCZ+BOstjmKaXHp6QQhWs18yE9We87BdOaI43Ctu8="}
+  [4;35;1mCategory Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Create (0.4ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('Test', '2009-12-14 11:38:19', '2009-12-14 11:38:19')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://formation.local/admin/categories
+Completed in 15ms (DB: 4) | 302 Found [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:38:19) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://formation.local/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:38:20) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:38:21) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:38:22) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:38:22) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:38:22) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:38:30) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#edit (for 127.0.0.1 at 2009-12-14 12:39:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/edit
+Rendered admin/categories/_form (2.5ms)
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://formation.local/admin/categories/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:40:19) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/application
+Rendering categories/index
+  [4;36;1mCategory Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Completed in 35ms (View: 25, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:40:39) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.5ms)
+Completed in 23ms (View: 18, DB: 2) | 200 OK [http://localhost/admin]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#edit (for 127.0.0.1 at 2009-12-14 12:40:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/edit
+Rendered admin/categories/_form (2.8ms)
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/admin/categories/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2009-12-14 12:40:45) [PUT]
+  Parameters: {"category"=>{"name"=>"Chats2"}, "commit"=>"Ajouter", "authenticity_token"=>"rEtZcUTEQUSzuxFCJx8VVo4i8R9h2iyCBZLlDvyRqPI=", "id"=>"1"}
+  [4;36;1mCategory Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Update (0.2ms)[0m   [0mUPDATE `categories` SET `updated_at` = '2009-12-14 11:40:45', `name` = 'Chats2' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 8ms (DB: 2) | 302 Found [http://localhost/admin/categories/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:40:45) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:41:04) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#edit (for 127.0.0.1 at 2009-12-14 12:41:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/edit
+Rendered admin/categories/_form (3.3ms)
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 12ms (View: 6, DB: 2) | 200 OK [http://localhost/admin/categories/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2009-12-14 12:41:10) [PUT]
+  Parameters: {"category"=>{"name"=>"Chats3"}, "commit"=>"Ajouter", "authenticity_token"=>"rEtZcUTEQUSzuxFCJx8VVo4i8R9h2iyCBZLlDvyRqPI=", "id"=>"1"}
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCategory Update (0.3ms)[0m   [0;1mUPDATE `categories` SET `updated_at` = '2009-12-14 11:41:10', `name` = 'Chats3' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 14ms (DB: 8) | 302 Found [http://localhost/admin/categories/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:41:10) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:41:13) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 16ms (View: 4, DB: 1) | 200 OK [http://localhost/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#edit (for 127.0.0.1 at 2009-12-14 12:41:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.9ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/edit
+Rendered admin/categories/_form (80.8ms)
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 91ms (View: 83, DB: 2) | 200 OK [http://localhost/admin/categories/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#edit (for 127.0.0.1 at 2009-12-14 12:42:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.9ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/edit
+Rendered admin/categories/_form (2.8ms)
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 22ms (View: 8, DB: 3) | 200 OK [http://localhost/admin/categories/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2009-12-14 12:43:01) [PUT]
+  Parameters: {"category"=>{"name"=>"Chats3"}, "commit"=>"Enregistrer", "authenticity_token"=>"rEtZcUTEQUSzuxFCJx8VVo4i8R9h2iyCBZLlDvyRqPI=", "id"=>"1"}
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/admin/categories/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:43:01) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#new (for 127.0.0.1 at 2009-12-14 12:43:02) [GET]
+  [4;35;1mCategory Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendering template within layouts/admin
+Rendering admin/categories/new
+Rendered admin/categories/_form (2.0ms)
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 13ms (View: 6, DB: 2) | 200 OK [http://localhost/admin/categories/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2009-12-14 12:43:05) [POST]
+  Parameters: {"category"=>{"name"=>"daedaez"}, "commit"=>"Ajouter", "authenticity_token"=>"rEtZcUTEQUSzuxFCJx8VVo4i8R9h2iyCBZLlDvyRqPI="}
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Create (0.2ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('daedaez', '2009-12-14 11:43:05', '2009-12-14 11:43:05')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 7ms (DB: 2) | 302 Found [http://localhost/admin/categories]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 12:43:05) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 12:43:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.9ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 1) [0m
+  [4;35;1mProduct Load (0.1ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.category_id = 1) [0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 20ms (View: 11, DB: 4) | 200 OK [http://localhost/admin/categories/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 12:43:19) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mCategory Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 4) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;35;1mProduct Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 4) [0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 14ms (View: 5, DB: 4) | 200 OK [http://localhost/admin/categories/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#new (for 127.0.0.1 at 2009-12-14 12:52:21) [GET]
+  [4;36;1mCategory Columns (13.3ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendering template within layouts/admin
+Rendering admin/categories/new
+
+ActionView::TemplateError (undefined method `error_message_for' for #<ActionView::Base:0x101f46878>) on line #2 of app/views/admin/categories/_form.html.erb:
+1: <% form_for [:admin, @category] do |f| %>
+2:   <%= error_message_for @category %>
+3:   <%= f.label :name, "Nom : " %><br />
+4:   <%= f.text_field :name %>
+5:   <%= f.submit @category.new_record? ? "Ajouter" : "Enregistrer" %>
+
+    app/views/admin/categories/_form.html.erb:2
+    app/views/admin/categories/_form.html.erb:1
+    app/views/admin/categories/new.html.erb:2
+    /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (188.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#new (for 127.0.0.1 at 2009-12-14 12:52:45) [GET]
+  [4;36;1mCategory Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendering template within layouts/admin
+Rendering admin/categories/new
+Rendered admin/categories/_form (3.6ms)
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/admin/categories/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2009-12-14 12:52:47) [POST]
+  Parameters: {"category"=>{"name"=>""}, "commit"=>"Ajouter", "authenticity_token"=>"rEtZcUTEQUSzuxFCJx8VVo4i8R9h2iyCBZLlDvyRqPI="}
+  [4;36;1mCategory Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/admin
+Rendering admin/categories/new
+Rendered admin/categories/_form (10.7ms)
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 22ms (View: 13, DB: 3) | 200 OK [http://localhost/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2009-12-14 12:53:25) [POST]
+  Parameters: {"category"=>{"name"=>""}, "commit"=>"Ajouter", "authenticity_token"=>"rEtZcUTEQUSzuxFCJx8VVo4i8R9h2iyCBZLlDvyRqPI="}
+  [4;36;1mCategory Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/admin
+Rendering admin/categories/new
+Rendered admin/categories/_form (5.0ms)
+Rendered admin/shared/_tabs (2.5ms)
+Completed in 30ms (View: 9, DB: 2) | 200 OK [http://localhost/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2009-12-14 13:02:13) [POST]
+  Parameters: {"category"=>{"name"=>""}, "commit"=>"Ajouter", "authenticity_token"=>"rEtZcUTEQUSzuxFCJx8VVo4i8R9h2iyCBZLlDvyRqPI="}
+  [4;36;1mCategory Columns (15.1ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/admin
+Rendering admin/categories/new
+Rendered admin/categories/_form (7.8ms)
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 37ms (View: 15, DB: 16) | 200 OK [http://localhost/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2009-12-14 13:02:37) [POST]
+  Parameters: {"category"=>{"name"=>"eferr"}, "commit"=>"Ajouter", "authenticity_token"=>"rEtZcUTEQUSzuxFCJx8VVo4i8R9h2iyCBZLlDvyRqPI="}
+  [4;36;1mCategory Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mCategory Create (0.3ms)[0m   [0;1mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('eferr', '2009-12-14 12:02:37', '2009-12-14 12:02:37')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 17ms (DB: 5) | 302 Found [http://localhost/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 13:02:37) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#edit (for 127.0.0.1 at 2009-12-14 13:02:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/edit
+Rendered admin/categories/_form (3.5ms)
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/admin/categories/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2009-12-14 13:02:42) [PUT]
+  Parameters: {"category"=>{"name"=>""}, "commit"=>"Enregistrer", "authenticity_token"=>"rEtZcUTEQUSzuxFCJx8VVo4i8R9h2iyCBZLlDvyRqPI=", "id"=>"1"}
+  [4;35;1mCategory Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.8ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/admin
+Rendering admin/categories/edit
+Rendered admin/categories/_form (10.5ms)
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 22ms (View: 13, DB: 2) | 200 OK [http://localhost/admin/categories/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 13:14:33) [GET]
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 105ms (View: 6, DB: 2) | 200 OK [http://localhost/admin]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-14 13:14:40) [GET]
+
+ActionController::RoutingError (No route matches "/admin/product" with {:method=>:get}):
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-14 13:14:42) [GET]
+
+ActionController::RoutingError (No route matches "/admin/products" with {:method=>:get}):
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ProductsController#show (for 127.0.0.1 at 2009-12-14 13:16:02) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Product without an ID):
+  app/controllers/admin/products_controller.rb:7:in `show'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ProductsController#index (for 127.0.0.1 at 2009-12-14 13:17:33) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/admin
+Rendering admin/products/index
+  [4;35;1mProduct Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/admin/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ProductsController#new (for 127.0.0.1 at 2009-12-14 13:17:36) [GET]
+  [4;35;1mProduct Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/admin
+Rendering admin/products/new
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/products/_form (13.3ms)
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 24ms (View: 18, DB: 3) | 200 OK [http://localhost/admin/products/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ProductsController#create (for 127.0.0.1 at 2009-12-14 13:17:48) [POST]
+  Parameters: {"commit"=>"Ajouter", "authenticity_token"=>"rEtZcUTEQUSzuxFCJx8VVo4i8R9h2iyCBZLlDvyRqPI=", "product"=>{"price"=>"10,2", "name"=>"zed", "category_id"=>"1"}}
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/admin
+Rendering admin/products/new
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/products/_form (16.4ms)
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 26ms (View: 17, DB: 3) | 200 OK [http://localhost/admin/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ProductsController#create (for 127.0.0.1 at 2009-12-14 13:17:53) [POST]
+  Parameters: {"commit"=>"Ajouter", "authenticity_token"=>"rEtZcUTEQUSzuxFCJx8VVo4i8R9h2iyCBZLlDvyRqPI=", "product"=>{"price"=>"10.2", "name"=>"zed", "category_id"=>"1"}}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Create (0.2ms)[0m   [0mINSERT INTO `products` (`name`, `price`, `created_at`, `updated_at`, `category_id`) VALUES('zed', 10.2, '2009-12-14 12:17:53', '2009-12-14 12:17:53', 1)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/products
+Completed in 8ms (DB: 2) | 302 Found [http://localhost/admin/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ProductsController#index (for 127.0.0.1 at 2009-12-14 13:17:53) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/admin
+Rendering admin/products/index
+  [4;35;1mProduct Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/admin/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ProductsController#new (for 127.0.0.1 at 2009-12-14 13:17:57) [GET]
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/admin
+Rendering admin/products/new
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/products/_form (7.3ms)
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 14ms (View: 8, DB: 3) | 200 OK [http://localhost/admin/products/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ProductsController#show (for 127.0.0.1 at 2009-12-14 13:22:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.9ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+ActionView::MissingTemplate (Missing template admin/products/show.erb in view path app/views):
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 13:22:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.5ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 1) [0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.category_id = 1) [0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 18ms (View: 8, DB: 5) | 200 OK [http://localhost/admin/categories/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 13:22:19) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mCategory Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 4) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;36;1mProduct Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 4) [0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 10ms (View: 4, DB: 2) | 200 OK [http://localhost/admin/categories/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 13:22:22) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 5) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;35;1mProduct Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 5) [0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 10ms (View: 4, DB: 2) | 200 OK [http://localhost/admin/categories/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 13:22:24) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mCategory Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 3) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;36;1mProduct Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 3) [0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 89ms (View: 83, DB: 3) | 200 OK [http://localhost/admin/categories/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 13:22:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCategory Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.9ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;35;1mProduct Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 2) [0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 16ms (View: 6, DB: 4) | 200 OK [http://localhost/admin/categories/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 13:22:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;36;1mProduct Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 1) [0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.category_id = 1) [0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 12ms (View: 5, DB: 2) | 200 OK [http://localhost/admin/categories/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2009-12-14 13:22:39) [GET]
+
+ActionController::UnknownAction (No action responded to new. Actions: ):
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ProductsController#new (for 127.0.0.1 at 2009-12-14 13:22:44) [GET]
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/admin
+Rendering admin/products/new
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/products/_form (12.9ms)
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 19ms (View: 10, DB: 6) | 200 OK [http://localhost/admin/products/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ProductsController#create (for 127.0.0.1 at 2009-12-14 13:22:52) [POST]
+  Parameters: {"commit"=>"Ajouter", "authenticity_token"=>"rEtZcUTEQUSzuxFCJx8VVo4i8R9h2iyCBZLlDvyRqPI=", "product"=>{"price"=>"100", "name"=>"pouet", "category_id"=>"2"}}
+  [4;35;1mProduct Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Create (0.4ms)[0m   [0mINSERT INTO `products` (`name`, `price`, `created_at`, `updated_at`, `category_id`) VALUES('pouet', 100.0, '2009-12-14 12:22:52', '2009-12-14 12:22:52', 2)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/products
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/admin/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ProductsController#index (for 127.0.0.1 at 2009-12-14 13:22:52) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/admin
+Rendering admin/products/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://localhost/admin/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 13:22:57) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 13:23:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;36;1mProduct Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 2) [0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.category_id = 2) [0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 12ms (View: 5, DB: 2) | 200 OK [http://localhost/admin/categories/2]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 13:23:08) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/admin/categories]
