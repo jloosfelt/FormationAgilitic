@@ -1,0 +1,11 @@
+
+<h2>Liste des catégories</h2>
+<% if @categories.any? %>  
+  <ul>
+    <% @categories.each do |category| %>
+       <li><%= link_to category.name, category_path(category) %></li>
+    <% end %>
+  </ul>      
+<% else %>
+  <p>Il n'y a aucune catégorie</p>
+<% end %>

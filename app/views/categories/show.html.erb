@@ -1,0 +1,16 @@
+<h2><%= @category.name %> / Liste des produits</h2>
+
+<% if @category.products.any? %>
+<table>
+  <tr>
+     <th>Nom</th>
+  </tr>
+  <% @category.products.each do |product| %>
+     <tr>
+       <td><%= product.name %></td> 
+     </tr>
+  <% end %>
+</table>          
+<% else %>
+    <p>Il n'y a aucun produit dans cette catégorie.</p>
+<% end %>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ 
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Front - <%= h(yield(:title) || "Untitled") %></title>
+ 
+	<%= stylesheet_link_tag 'admin' %>
+	<%= yield(:head) %>
+</head>
+ 
+ 
+<body>
+	<div class="wrapper">
+ 
+		<h1 class="logo"><%= link_to "Site de vente", root_path %></h1>
+    <p class="txt_right">  
+			<%= link_to "S'enregistrer", "#" %>
+			<span class="v_line"> | </span>
+			<%= link_to "Connexion", "#" %>
+		</p>
+		<div class="clear"></div>
+		<div class="content">
+ 
+			<div class="in">
+				<% flash.each do |name, msg| %>
+			    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+			  <% end %>
+ 
+				
+				<h1><%=h yield(:title) %></h1>
+ 
+				<%= yield %>
+			</div>			
+		</div>
+		
+		<p class="footer">Made by <a href="http://agilitic.com">agilitic</a></p>
+ 	</div>
+</body>
+ 
+</html>

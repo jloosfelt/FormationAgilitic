@@ -1,0 +1,834 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (159.0ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (72.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCategories (20091214093606)
+  [4;36;1mSQL (12.6ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093606')[0m
+Migrating to CreateProducts (20091214093613)
+  [4;36;1mSQL (10.9ms)[0m   [0;1mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `price` varchar(255), `category_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093613')[0m
+Migrating to CreateCustomers (20091214093619)
+  [4;36;1mSQL (106.7ms)[0m   [0;1mCREATE TABLE `customers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093619')[0m
+Migrating to CreateOrders (20091214093624)
+  [4;36;1mSQL (39.4ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093624')[0m
+Migrating to CreateUsers (20091214093628)
+  [4;36;1mSQL (10.5ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093628')[0m
+Migrating to CreateOrderItems (20091214093634)
+  [4;36;1mSQL (10.2ms)[0m   [0;1mCREATE TABLE `order_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214093634')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (8.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mdescribe `categories`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `categories`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `customers`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `customers`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `customers`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `order_items`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `order_items`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `order_items`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `orders`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW KEYS FROM `orders`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-14 11:01:51) [GET]
+
+ActionController::RoutingError (No route matches "/rails/info/properties" with {:method=>:get}):
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:02:22) [GET]
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 39ms (View: 36, DB: 0) | 200 OK [http://formation.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:02:40) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:09:07) [GET]
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://formation.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:09:10) [GET]
+Rendering template within layouts/admin
+Rendering admin/categories/index
+Rendered admin/shared/_tabs (1.2ms)
+Completed in 17ms (View: 16, DB: 0) | 200 OK [http://formation.local/admin]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:09:12) [GET]
+Rendering template within layouts/admin
+Rendering admin/categories/index
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://formation.local/admin]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:11:30) [GET]
+Rendering template within layouts/admin
+Rendering admin/categories/index
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://formation.local/admin]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:14:00) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 22ms (View: 5, DB: 2) | 200 OK [http://formation.local/admin]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:14:05) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:15:05) [GET]
+  [4;36;1mCategory Load (0.6ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 17ms (View: 11, DB: 2) | 200 OK [http://formation.local/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 11:15:09) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to show. Actions: index):
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:27:10) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+ERROR: compiling _run_erb_app47views47admin47categories47index46html46erb RAISED compile error
+/Users/jloosfelt/workspace/formation/app/views/admin/categories/index.html.erb:10: syntax error, unexpected ';'
+;  end if ; @output_buffer
+           ^
+Function body:           def _run_erb_app47views47admin47categories47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  if @categories.any? ; @output_buffer.concat "\n  <h2>Liste des cat\303\251gories</h2>\n  <ul>\n    "
+
+
+;  @categories.each do |category| ; @output_buffer.concat "\n       <li>"
+; @output_buffer.concat(( link_to category.name, admin_category_path(category) ).to_s); @output_buffer.concat "</li>\n    "
+;  end ; @output_buffer.concat "\n  </ul>      \n"
+
+;  else ; @output_buffer.concat "\n  <p>Il n'y a aucune cat\303\251gorie</p>\n"
+
+;  end if ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/jloosfelt/workspace/formation/app/views/admin/categories/index.html.erb:13:in `compile!'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/vendor/rack-1.0.0-git/lib/rack/head.rb:9:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/vendor/rack-1.0.0-git/lib/rack/methodoverride.rb:24:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/vendor/rack-1.0.0-git/lib/rack/lock.rb:11:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/vendor/rack-1.0.0-git/lib/rack/lock.rb:11:in `synchronize'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/vendor/rack-1.0.0-git/lib/rack/lock.rb:11:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/utils.rb:183:in `safe_fork'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:163:in `start'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/bin/passenger-spawn-server:61
+
+ActionView::TemplateError (compile error
+/Users/jloosfelt/workspace/formation/app/views/admin/categories/index.html.erb:10: syntax error, unexpected ';'
+;  end if ; @output_buffer
+           ^) on line #10 of app/views/admin/categories/index.html.erb:
+7:   </ul>      
+8: <% else %>
+9:   <p>Il n'y a aucune catégorie</p>
+10: <% end if %>
+
+    app/views/admin/categories/index.html.erb:13:in `compile!'
+    passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+    passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (174.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:27:26) [GET]
+  [4;35;1mCategory Load (1.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.9ms)
+Completed in 29ms (View: 21, DB: 2) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 11:27:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (4.5ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+ERROR: compiling _run_erb_app47views47admin47categories47show46html46erb RAISED compile error
+/Users/jloosfelt/workspace/formation/app/views/admin/categories/show.html.erb:8: syntax error, unexpected ')'
+...y.products.each do |product| ).to_s); @output_buffer.concat ...
+                              ^
+/Users/jloosfelt/workspace/formation/app/views/admin/categories/show.html.erb:14: syntax error, unexpected kELSE, expecting ')'
+;  else ; @output_buffer.concat "\n  ...
+       ^
+/Users/jloosfelt/workspace/formation/app/views/admin/categories/show.html.erb:16: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer
+      ^
+/Users/jloosfelt/workspace/formation/app/views/admin/categories/show.html.erb:19: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47admin47categories47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h2>"; @output_buffer.concat(( @category.name ).to_s); @output_buffer.concat " / Liste des produits</h2>\n\n"
+
+;  if @category.products.any? ; @output_buffer.concat "\n<table>\n  <tr>\n     <th>Nom</th>\n  </tr>\n  "
+
+
+
+
+; @output_buffer.concat(( @category.products.each do |product| ).to_s); @output_buffer.concat "\n     <tr>\n       <td>"
+
+; @output_buffer.concat(( product.name ).to_s); @output_buffer.concat "</td> \n     </tr>\n  "
+
+;  end ; @output_buffer.concat "\n</table>          \n"
+
+;  else ; @output_buffer.concat "\n    <p>Il n'y a aucun produit dans cette cat\303\251gorie.</p>\n"
+
+;  end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/jloosfelt/workspace/formation/app/views/admin/categories/show.html.erb:19:in `compile!'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/vendor/rack-1.0.0-git/lib/rack/head.rb:9:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/vendor/rack-1.0.0-git/lib/rack/methodoverride.rb:24:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/vendor/rack-1.0.0-git/lib/rack/lock.rb:11:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/vendor/rack-1.0.0-git/lib/rack/lock.rb:11:in `synchronize'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/vendor/rack-1.0.0-git/lib/rack/lock.rb:11:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/utils.rb:183:in `safe_fork'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:163:in `start'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+/opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/passenger-2.2.5/bin/passenger-spawn-server:61
+
+ActionView::TemplateError (compile error
+/Users/jloosfelt/workspace/formation/app/views/admin/categories/show.html.erb:8: syntax error, unexpected ')'
+...y.products.each do |product| ).to_s); @output_buffer.concat ...
+                              ^
+/Users/jloosfelt/workspace/formation/app/views/admin/categories/show.html.erb:14: syntax error, unexpected kELSE, expecting ')'
+;  else ; @output_buffer.concat "\n  ...
+       ^
+/Users/jloosfelt/workspace/formation/app/views/admin/categories/show.html.erb:16: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer
+      ^
+/Users/jloosfelt/workspace/formation/app/views/admin/categories/show.html.erb:19: syntax error, unexpected kEND, expecting ')') on line #8 of app/views/admin/categories/show.html.erb:
+5:   <tr>
+6:      <th>Nom</th>
+7:   </tr>
+8:   <%= @category.products.each do |product| %>
+9:      <tr>
+10:        <td><%= product.name %></td> 
+11:      </tr>
+
+    app/views/admin/categories/show.html.erb:19:in `compile!'
+    passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+    passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (45.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 11:27:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;35;1mProduct Columns (6.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 1) [0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 25ms (View: 12, DB: 9) | 200 OK [http://formation.local/admin/categories/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 11:27:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCategory Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;36;1mProduct Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 2) [0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 10ms (View: 5, DB: 2) | 200 OK [http://formation.local/admin/categories/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:28:36) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.1ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2009-12-14 11:28:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.9ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/categories/show
+  [4;36;1mProduct Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 1) [0m
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.category_id = 1) [0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 18ms (View: 9, DB: 5) | 200 OK [http://formation.local/admin/categories/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-14 11:32:36) [GET]
+
+ActionController::RoutingError (No route matches "/categories/1" with {:method=>:get}):
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-14 11:32:41) [GET]
+
+ActionController::RoutingError (No route matches "/categories" with {:method=>:get}):
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:32:46) [GET]
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/application
+Rendering categories/index
+  [4;35;1mCategory Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+
+ActionView::TemplateError (undefined method `category_path' for #<ActionView::Base:0x102a04d00>) on line #5 of app/views/categories/index.html.erb:
+2: <% if @categories.any? %>  
+3:   <ul>
+4:     <% @categories.each do |category| %>
+5:        <li><%= link_to category.name, category_path(category) %></li>
+6:     <% end %>
+7:   </ul>      
+8: <% else %>
+
+    app/views/categories/index.html.erb:5
+    app/views/categories/index.html.erb:4:in `each'
+    app/views/categories/index.html.erb:4
+    passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+    passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (47.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:36:11) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/application
+Rendering categories/index
+  [4;36;1mCategory Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://formation.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:37:01) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/application
+Rendering categories/index
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://formation.local/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:37:14) [GET]
+  [4;35;1mCategory Load (0.7ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;36;1mCategory Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 20ms (View: 9, DB: 2) | 200 OK [http://formation.local/admin/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:37:34) [GET]
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://formation.local/admin/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:37:39) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/application
+Rendering categories/index
+  [4;36;1mCategory Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+Completed in 15ms (View: 9, DB: 2) | 200 OK [http://formation.local/categories]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:41:25) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/application
+Rendering categories/index
+  [4;35;1mCategory Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Completed in 99ms (View: 93, DB: 2) | 200 OK [http://formation.local/categories]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2009-12-14 11:41:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendering template within layouts/application
+Rendering categories/show
+
+ActionView::TemplateError (undefined method `name' for #<Enumerable::Enumerator:0x102a40f58>) on line #1 of app/views/categories/show.html.erb:
+1: <h2><%= @category.name %> / Liste des produits</h2>
+2: 
+3: <% if @category.products.any? %>
+4: <table>
+
+    app/views/categories/show.html.erb:1
+    passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+    passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (43.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2009-12-14 11:42:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.7ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;35;1mProduct Columns (5.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 1) [0m
+  [4;35;1mProduct Load (0.1ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.category_id = 1) [0m
+Completed in 20ms (View: 8, DB: 8) | 200 OK [http://formation.local/categories/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2009-12-14 11:46:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mCategory Load (0.9ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` WHERE (`products`.category_id = 1) [0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.category_id = 1) [0m
+Completed in 17ms (View: 9, DB: 4) | 200 OK [http://formation.local/categories/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-14 11:46:34) [GET]
+
+ActionController::RoutingError (No route matches "/admi" with {:method=>:get}):
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2009-12-14 11:46:37) [GET]
+  [4;36;1mCategory Load (0.8ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/admin
+Rendering admin/categories/index
+  [4;35;1mCategory Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Rendered admin/shared/_tabs (0.2ms)
+Completed in 10ms (View: 5, DB: 2) | 200 OK [http://formation.local/admin]
